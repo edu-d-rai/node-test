@@ -30,6 +30,7 @@ jobs:
       MYSQL_USER: root
       MYSQL_PASSWORD: test
       MYSQL_HOST: '127.0.0.1'
+      DB_DIALECT: mysql
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
