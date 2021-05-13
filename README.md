@@ -4,18 +4,16 @@ This app was bootstrapped with [Imagine.ai](https://imagine.ai) 💛
 > Imagine.ai is an app starter on steroids! 
 
 ### Run the app in terminal
-1. Start a MySQL database server on your machine or in the cloud.
+1. Start a Postgres database server on your machine or in the cloud.
 2. Set the following environment variables in your .env file
 
 ```
-MYSQL_HOST=<address-where-database-running>
-MYSQL_PORT=<port-where-database-running>
-MYSQL_USER=<username-for-database>
-MYSQL_DATABASE=<database-name>
-MYSQL_PASSWORD=<password-to-database>
-// root password is only needed if using docker
-MYSQL_ROOT_PASSWORD=<root-password-to-database>
-DB_DIALECT=mysql
+POSTGRES_HOST=<address-where-database-running>
+POSTGRES_PORT=<port-where-database-running>
+POSTGRES_DB=<database-name>
+POSTGRES_USER=<username-for-database>
+POSTGRES_PASSWORD=<password-to-database>
+DB_DIALECT=postgres
 ```
 
 3. Install packages and start the application server.

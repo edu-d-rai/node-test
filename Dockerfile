@@ -16,4 +16,4 @@ RUN yarn install
 COPY . .
 
 EXPOSE 8000
-CMD sleep 15 && npm run start-dev
+CMD npm run start-dev

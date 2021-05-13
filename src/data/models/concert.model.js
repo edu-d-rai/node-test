@@ -19,8 +19,8 @@ const concertModel = (sequelize) => {
         },
       },
       date: {
-        type: DataTypes.DATE(3),
-        defaultValue: Sequelize.literal(`NOW(3)`),
+        type: DataTypes.DATE,
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
         validate: {
           isDate: true,
         },

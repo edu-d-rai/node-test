@@ -14,23 +14,25 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     services:
-      mysql:
-        image: mysql
+      postgres:
+        image: postgres
         env:
-          MYSQL_ROOT_PASSWORD: test
-          MYSQL_DATABASE: test
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: test
+          POSTGRES_DB: test
         ports:
-          - 3306:3306
+          - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     strategy:
       matrix:
         os: [ubuntu-latest]
         node-version: [14.16]
     env:
-      MYSQL_DATABASE: test
-      MYSQL_USER: root
-      MYSQL_PASSWORD: test
-      MYSQL_HOST: '127.0.0.1'
-      DB_DIALECT: mysql
+      POSTGRES_DB: test
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      DB_DIALECT: postgres
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
