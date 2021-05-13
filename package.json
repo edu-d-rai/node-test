@@ -9,14 +9,8 @@
     "docker:up": "docker-compose up",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "lint": "eslint src/ --fix",
-    "test": "yarn create-test-db && NODE_ENV=test jest --runInBand --verbose --detectOpenHandles --forceExit && yarn drop-test-db",
-    "coverage": "yarn create-test-db && NODE_ENV=test jest --runInBand --verbose --collect-coverage --detectOpenHandles --forceExit && yarn drop-test-db",
-    "create-test-db": "NODE_ENV=test yarn sequelize db:create",
-    "drop-test-db": "NODE_ENV=test yarn sequelize db:drop",
-    "create-db": "sequelize-cli db:create",
-    "drop-db": "sequelize-cli db:drop",
-    "apply-migrations": "sequelize-cli db:migrate",
-    "revert-migrations": "sequelize-cli db:migrate:undo:all",
+    "test": "NODE_ENV=test jest --runInBand --verbose --detectOpenHandles --forceExit",
+    "coverage": "NODE_ENV=test jest --runInBand --verbose --collect-coverage --detectOpenHandles --forceExit",
     "build": "babel src -d dist"
   },
   "dependencies": {
@@ -34,9 +28,8 @@
     "http-status": "^1.5.0",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
-    "pg": "^8.6.0",
-    "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.5",
+    "sqlite3": "^5.0.1",
     "swagger-ui-express": "^4.1.6",
     "tslib": "^2.2.0"
   },

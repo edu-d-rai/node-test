@@ -6,11 +6,6 @@ import { concertModel } from './concert.model';
 import { musicianModel } from './musician.model';
 import { songModel } from './song.model';
 
-const pg = require('pg');
-
-// https://github.com/sequelize/sequelize/issues/4550
-pg.defaults.parseInt8 = true;
-
 const sequelize = new Sequelize(config.database, config.username, config.password, {
   ...config,
 });

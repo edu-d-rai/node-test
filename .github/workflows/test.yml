@@ -13,26 +13,13 @@ jobs:
   build:
 
     runs-on: ${{ matrix.os }}
-    services:
-      postgres:
-        image: postgres
-        env:
-          POSTGRES_USER: test
-          POSTGRES_PASSWORD: test
-          POSTGRES_DB: test
-        ports:
-          - 5432:5432
-        # needed because the postgres container does not provide a healthcheck
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     strategy:
       matrix:
         os: [ubuntu-latest]
         node-version: [14.16]
     env:
-      POSTGRES_DB: test
-      POSTGRES_USER: test
-      POSTGRES_PASSWORD: test
-      DB_DIALECT: postgres
+      DB_DIALECT: sqlite
+      DB_STORAGE: test.sqlite
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}

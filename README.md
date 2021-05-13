@@ -4,19 +4,7 @@ This app was bootstrapped with [Imagine.ai](https://imagine.ai) 💛
 > Imagine.ai is an app starter on steroids! 
 
 ### Run the app in terminal
-1. Start a Postgres database server on your machine or in the cloud.
-2. Set the following environment variables in your .env file
-
-```
-POSTGRES_HOST=<address-where-database-running>
-POSTGRES_PORT=<port-where-database-running>
-POSTGRES_DB=<database-name>
-POSTGRES_USER=<username-for-database>
-POSTGRES_PASSWORD=<password-to-database>
-DB_DIALECT=postgres
-```
-
-3. Install packages and start the application server.
+Install packages and start the application server.
 
 ```
 $ yarn install

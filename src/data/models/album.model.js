@@ -26,7 +26,7 @@ const albumModel = (sequelize) => {
       },
       releaseDate: {
         type: DataTypes.DATEONLY,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
+        defaultValue: Sequelize.literal('CURRENT_DATE'),
         validate: {
           isDate: true,
         },
